@@ -1,0 +1,36 @@
+# ==============================================================================
+# SovereignNexus LLC - Automated Security Orchestration Configuration
+# Target Baseline: Institutional Attack Surface Mapping (2026 Specification)
+# ==============================================================================
+
+# Core engine execution parameters
+options:
+  bulk-size: 25              # Number of targets to analyze in parallel
+  concurrency: 50            # Maximum simultaneous network requests
+  rate-limit: 150            # Hard ceiling for requests per second to avoid network choking
+  timeout: 5                 # Seconds to wait before dropping a unresponsive connection
+  retries: 2                 # Connection retry attempts before flagging a target offline
+
+# Absolute scanning guardrails
+severity:
+  - critical
+  - high
+  - medium
+
+# Targeted threat vector groups (Using official community templates)
+templates:
+  - cves/2025/               # Focus heavily on recent critical vulnerabilities
+  - cves/2026/               # Edge-case 2026 trending exploits
+  - exposures/configs/       # Detect misconfigured local cloud/edge panels
+  - vulnerabilities/generic/ # Standard injection vectors (SQLi, XSS, Path Traversal)
+  - technologies/            # Fingerprint hidden tech stacks and software footprints
+
+# Output and logging filtration
+headless: false              # Set to true only if executing deep browser-based DOM attacks
+stats: true                  # Output real-time metrics during long execution loops
+json-export: true            # Export structured data fields for downstream Python processing
+
+# Automated reporting headers
+custom-headers:
+  - 'User-Agent: SovereignNexus-Orchestrator/2.0-Audit'
+  - 'X-Audit-Authorization: Local-Infrastructure-Mapping-Only'
