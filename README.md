@@ -27,6 +27,11 @@
 
 <br>
 
+> [!NOTE]
+> **Sovereign Nexus LLC Maintenance & Audit**  
+> This repository is maintained and audited by **Sovereign Nexus LLC** as part of its deterministic, 8GB-constrained agentic workflows. Under the **1=1=1 Axiom**, this repository enforces strict operational parity, OpSec hardening, and deterministic edge execution.  
+> **Core Focus:** *Agile Edge Integration*
+
 **Nuclei is a modern, high-performance vulnerability scanner that leverages simple YAML-based templates. It empowers you to design custom vulnerability detection scenarios that mimic real-world conditions, leading to zero false positives.**
 
 - Simple YAML format for creating and customizing vulnerability templates.

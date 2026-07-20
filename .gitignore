@@ -53,3 +53,11 @@ vendor
 *.trace
 *.mem
 *.cpu
+
+# Sovereign OpSec Blocklist
+.env
+__pycache__/
+*.db
+ledgers/
+*.local
+*.key
