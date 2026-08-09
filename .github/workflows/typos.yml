@@ -1,0 +1,18 @@
+name: Typos Check
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+
+jobs:
+  typos:
+    name: Spell Check with Typos
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout Actions
+       uses: actions/checkout@v4
+  
+     - name: Typos Check
+       uses: crate-ci/typos@master
